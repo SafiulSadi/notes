@@ -78,64 +78,48 @@ algo expert problems for the coding test.
 #             left += 1
 #         elif current_sum > target_sum:
 #             right -= 1
-import math
-import sys
 
-# arr = []
-odd = 0
-even = 0
-input = sys.stdin.read
-arr = data = sys.stdin.read().strip().split('\n')
 
-# for i in data:
-#     try:
-#         a = input()
-#     except EOFError:
-#         break
-#     else:
-#         arr.append(a)
-#         print(arr)
-# print(arr)
-max_len = 0
+# 3Sum
+target = 0
+arr = [-1,0,1,2,-1,-4]
+# arr = sorted(arr)
+brr = set()
+crr = []
+
+
 for i in arr:
-    if len(i) > max_len:
-        max_len = len(i)
-        # print("hlo")
+    for j in arr:
+        for k in arr:
+            if (i + j + k) == target:
+                    # and (i != j and i != k and j != k)):
+                brr.add(i)
+                brr.add(j)
+                brr.add(k)
 
-    else:
-        pass
-#         print("hi")
-print("*" * (max_len + 2))
-for i in arr:
-    if len(i) <= max_len:
-        if (max_len % 2 == 0 and len(i) % 2 == 0) or (max_len % 2 == 1 and len(i) % 2 == 1):
-            g = math.floor((max_len - len(i))/2)
-            space = " " * (g)
-            i = "*" + space + i + space + "*"
-            print(i)
-        elif max_len % 2 == 0 and len(i) % 2 == 1:
-            g = math.ceil((max_len - len(i)) / 2)
-            space = " " * (g)
-            if odd % 2 == 0:
-                odd += 1
-                i = "*" + " " * (g - 1) + i + space + "*"
-                print(i)
-            if odd % 2 == 1:
-                odd += 1
-                i = "*" + space + i + " " * (g - 1) + "*"
-        elif max_len % 2 == 1 and len(i) % 2 == 0:
-            g = math.floor((max_len - len(i)) / 2)
-            space = " " * (g)
-            if even % 2 == 0:
-                even += 1
-                i = "*" + " " * (g - 1) + i + space + "*"
-                print(i)
-            if even % 2 == 1:
-                even += 1
-                i = "*" + space + i + " " * (g - 1) + "*"
-                print(i)
+                crr.append(list(brr) )
 
-print("*" * (max_len + 2))
 
+print(brr)
+
+
+# A
+n = input()
+arr = list(map(int, n))
 # print(arr)
-# print("*" * (max_len + 2))
+large = sorted(arr)
+small = sorted(arr, reverse=True)
+# print(large)
+# print(small)
+lint = ""
+for i in large:
+    lint += str(i)
+lint = int(lint)
+# print(lint)
+sint = ""
+for i in small:
+    sint += str(i)
+sint = int(sint)
+# print(sint)
+print(abs(lint - sint))
+
