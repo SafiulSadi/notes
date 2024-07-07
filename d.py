@@ -1,6 +1,6 @@
 upper = ["A", 'B', 'C', 'D', 'E', 'F', 'G', 'H','I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 lower = [i.lower() for i in upper]
-# print(lower)
+# print(lower)a
 # print(len(upper))
 
 n = int(input())
