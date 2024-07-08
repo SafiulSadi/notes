@@ -10,3 +10,6 @@ for i in range(len(arr)):
     if arr[i] != brr[i]:
         count += 1
 print(count)
+
+
+t7 =0
