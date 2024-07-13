@@ -48,6 +48,7 @@
 #
 n, d = map(int, input().split())
 count = 0
+cnt = 0
 counts = []
 while d > 0:
     x = input()
