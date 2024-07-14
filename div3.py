@@ -45,25 +45,50 @@
 # x = factorial(6)
 # print(x)
 #
+# #
+# n, d = map(int, input().split())
+# count = 0
+# cnt = 0
+# counts = []
+# while d > 0:
+#     x = input()
+#     arr = [int(i) for i in x]
+#     # print(arr)
+#     if sum(arr) != n:
+#         count += 1
+#         counts.append(count)
+# #         print("hellow")
+#     else:
+#         count = 0
+# #         print(":asdlfj")
+#     d -= 1
 #
-n, d = map(int, input().split())
-count = 0
-cnt = 0
-counts = []
-while d > 0:
-    x = input()
-    arr = [int(i) for i in x]
-    # print(arr)
-    if sum(arr) != n:
-        count += 1
-        counts.append(count)
-#         print("hellow")
-    else:
-        count = 0
-#         print(":asdlfj")
-    d -= 1
+# try:
+#     print(max(counts))
+# except:
+#     print(count)
+#
+# arr = [0, 2, 4, 1, 3]
+# for i in range(0, len(arr)):
+#     arr[i] = arr[(arr[i] + 3) % len(arr)]
+#     print(arr[i])
+# print(arr[i])
 
-try:
-    print(max(counts))
-except:
-    print(count)
+n, x = map(int, input().split())
+distressed = 0
+while n > 0:
+    sign, num = input().split()
+    num = int(num)
+    if sign == "+":
+        x += num
+    else:
+        if x >= num:
+            x -= num
+        else:
+            distressed += 1
+
+    n -= 1
+print(f"{x} {distressed}")
+
+
+
